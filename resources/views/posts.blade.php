@@ -8,10 +8,28 @@
     <title>My training laravel</title>
 </head>
 <body>
-    <h1>Hi, I'm training in Laravel</h1>
+    <h1>My first Post</h1>
 
     <article>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero in eius voluptatem distinctio rem quo, quibusdam qui tempore ut. Ipsum corrupti voluptates quos molestias numquam facilis officiis praesentium debitis amet.
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero in eius voluptatem distinctio rem quo, quibusdam qui tempore ut. Ipsum corrupti voluptates quos molestias numquam facilis officiis praesentium debitis amet.
+        </p>
+    </article>
+
+    <h1>My second Post</h1>
+
+    <article>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero in eius voluptatem distinctio rem quo, quibusdam qui tempore ut. Ipsum corrupti voluptates quos molestias numquam facilis officiis praesentium debitis amet.
+        </p>
+    </article>
+
+    <h1>My third Post</h1>
+
+    <article>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero in eius voluptatem distinctio rem quo, quibusdam qui tempore ut. Ipsum corrupti voluptates quos molestias numquam facilis officiis praesentium debitis amet.
+        </p>
     </article>
 </body>
 </html>
