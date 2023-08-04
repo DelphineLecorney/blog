@@ -8,7 +8,7 @@
     <title>My training laravel</title>
 </head>
 <body>
-    <h1>My first Post</h1>
+    <h1><a href="/posts/my-first-post">My first Post</a></h1>
 
     <article>
         <p>
@@ -16,7 +16,7 @@
         </p>
     </article>
 
-    <h1>My second Post</h1>
+    <h1><a href="/posts/my-second-post">My second Post</a></h1>
 
     <article>
         <p>
@@ -24,7 +24,7 @@
         </p>
     </article>
 
-    <h1>My third Post</h1>
+    <h1><a href="/posts/my-third-post">My third Post</a></h1>
 
     <article>
         <p>
