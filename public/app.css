@@ -1,4 +1,7 @@
 body {
-    background: navy;
+    background: rgb(153, 153, 247);
     color: white;
+    max-width: 600px;
+    margin: auto;
+    font-family: sans-serif;
 }
