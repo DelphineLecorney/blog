@@ -17,17 +17,15 @@ Route::get('/', function () {
     return view('posts');
 });
 
-Route::get('posts/{post}', function ($slug){
+Route::get('posts/{post}', function ($slug) {
+    if (! file_exists($path = __DIR__ . "/../resources/posts/{$slug}.html")) {
+        return redirect('/');
+    }
 
-        $path = __DIR__ . "/../resources/posts/{$slug}.html'";
+    $post = cache()->remember(
+        "posts.{$slug}", 1200, fn() => file_get_contents($path));
 
-        if(!file_exists($path)){
-            return redirect('/');
-        }
+    return view('post', [
+        'post' => $post]);
 
-        $post = file_get_contents($path);
-
-        return view('post', [
-            'post' => $post
-        ]);
-})->whereAlpha('post', '[A-z_\-]+');
+})->where('post', '[A-z_\-]+');
