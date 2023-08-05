@@ -8,7 +8,6 @@
     <title>My training laravel</title>
 </head>
 <body>
-    <!-- <h1><a href="/post">My first Post</a></h1> -->
 
     <article>
         <?= $post; ?>

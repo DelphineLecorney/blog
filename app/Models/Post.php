@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class Post 
+class Post
 {
     public static function find($slug)
     {
@@ -14,7 +14,10 @@ class Post
         }
 
         return cache()->remember(
-        "posts.{$slug}", 1200, fn() => file_get_contents($path));
+            "posts.{$slug}",
+            1200,
+            fn () => file_get_contents($path)
+        );
 
     }
 }
