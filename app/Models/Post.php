@@ -24,26 +24,39 @@ class Post
     }
 
     public static function all()
-    {       // Get a list of files from the "posts" directory using Laravel's File facade
+    {
+        return cache()->rememberForever('posts.all', function () {
+            // Get a list of files from the "posts" directory using Laravel's File facade
             return collect(File::files(resource_path("posts")))
             // Parse YAML front matter for each file and create an array of objects
-                ->map(fn($file) =>YamlFrontMatter::parseFile($file))
+                ->map(fn ($file) =>YamlFrontMatter::parseFile($file))
                 // Convert the parsed YAML documents to a collection of Post objects
-                ->map(fn($document) => new Post(
-                        $document->title,
-                        $document->excerpt,
-                        $document->date,
-                        $document->body(),
-                        $document->slug
+                ->map(fn ($document) => new Post(
+                    $document->title,
+                    $document->excerpt,
+                    $document->date,
+                    $document->body(),
+                    $document->slug
                 ))
                 ->sortBy('date');
+        });
     }
 
     public static function find($slug)
     {
-        // Return the found Post object or null if not found
         // Get all the Post objects from the collection returned by the 'all()' method
         // Find the first Post object in the collection where the 'slug' property matches the provided $slug
         return static::all()->firstWhere('slug', $slug);
+    }
+
+    public static function findOrFail($slug)
+    {
+        $post = static::find($slug);
+
+        if(!$post) {
+            throw new ModelNotFoundException();
+        }
+
+        return $post;
     }
 }
